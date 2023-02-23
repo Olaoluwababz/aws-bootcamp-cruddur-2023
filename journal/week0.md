@@ -1,6 +1,6 @@
 # Week 0 — Billing and Architecture
 
-###Required Homework Task
+### Required Homework Task
 
 ## Creating Billing ALarm
 
