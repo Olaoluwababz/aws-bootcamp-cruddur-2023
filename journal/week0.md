@@ -5,14 +5,14 @@
 
 I created one billing alarm 
 
-[image of the billing alarm i created](assets/Billingalarm%20screenshpt.png)
+!.[image of the billing alarm i created].(assets/Billingalarm%20screenshpt.png)
 
 
 ## Creating Budgets
 
 I created multiple budgets to track my spending for both credits and monthly spending.
 
-[Images of budgets created](assets/Budgets%20screenshot.png)
+!.[Images of budgets created].(assets/Budgets%20screenshot.png)
 
 ## Recreated Architectural Diagram of Cloud hosted application
 
