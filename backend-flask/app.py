@@ -29,9 +29,9 @@ from aws_xray_sdk.ext.flask.middleware import XRayMiddleware
 
 
 #cloud watch-------------------------------------------------------------
-import watchtower
-import logging
-from time import strftime
+# import watchtower
+# import logging
+# from time import strftime
 
 # Configuring Logger to Use CloudWatch
 # LOGGER = logging.getLogger(__name__)
@@ -127,7 +127,8 @@ def data_create_message():
 
 @app.route("/api/activities/home", methods=['GET'])
 def data_home():
-  data = HomeActivities.run(logger=LOGGER)
+  data = HomeActivities.run()
+  # data = HomeActivities.run(logger=LOGGER)
   return data, 200
 
 @app.route("/api/activities/notifications", methods=['GET'])
