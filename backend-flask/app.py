@@ -23,6 +23,11 @@ from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor
 from opentelemetry.sdk.trace.export import ConsoleSpanExporter, SimpleSpanProcessor
 
+#XRAY-------------
+from aws_xray_sdk.core import xray_recorder
+from aws_xray_sdk.ext.flask.middleware import XRayMiddleware
+
+
 #cloud watch-------------------------------------------------------------
 import watchtower
 import logging
@@ -37,6 +42,11 @@ provider.add_span_processor(processor)
 #show this in the logs within the backend-flask-app (STDOUT)
 simple_processor = SimpleSpanProcessor(ConsoleSpanExporter())
 provider.add_span_processor(simple_processor)
+
+# Xray-------------------------------------------
+xray_url = os.getenv("AWS_XRAY_URL")
+xray_recorder.configure(service='Backend-flask', dynamic_naming=xray_url)
+XRayMiddleware(app, xray_recorder)
 
 
 trace.set_tracer_provider(provider)
