@@ -60,8 +60,8 @@ provider.add_span_processor(processor)
 #provider.add_span_processor(simple_processor)
 
 # Xray-------------------------------------------
-# xray_url = os.getenv("AWS_XRAY_URL")
-# xray_recorder.configure(service='Backend-flask', dynamic_naming=xray_url)
+xray_url = os.getenv("AWS_XRAY_URL")
+xray_recorder.configure(service='Backend-flask', dynamic_naming=xray_url)
 
 
 
@@ -72,7 +72,7 @@ tracer = trace.get_tracer(__name__)
 app = Flask(__name__)
 
 #X-ray --------------------------------------------------------
-# XRayMiddleware(app, xray_recorder)
+XRayMiddleware(app, xray_recorder)
 
 
 #Honeycomb -----------------------------------------------------------------
@@ -107,6 +107,8 @@ def init_rollbar():
 
     # send exceptions from `app` to rollbar, using flask's signal system.
     got_request_exception.connect(rollbar.contrib.flask.report_exception, app)
+
+#cloudwatch    
 # @app.after_request
 # def after_request(response):
 #     timestamp = strftime('[%Y-%b-%d %H:%M]')
@@ -128,6 +130,7 @@ def data_message_groups():
     return model['data'], 200
 
 @app.route("/api/messages/@<string:handle>", methods=['GET'])
+
 def data_messages(handle):
   user_sender_handle = 'andrewbrown'
   user_receiver_handle = request.args.get('user_reciever_handle')
@@ -154,6 +157,7 @@ def data_create_message():
   return
 
 @app.route("/api/activities/home", methods=['GET'])
+@xray_recorder.capture('activities_home')
 def data_home():
   data = HomeActivities.run()
   # data = HomeActivities.run(logger=LOGGER)
@@ -165,6 +169,7 @@ def data_notifications():
   return data, 200
 
 @app.route("/api/activities/@<string:handle>", methods=['GET'])
+@xray_recorder.capture('activities_users')
 def data_handle(handle):
   model = UserActivities.run(handle)
   if model['errors'] is not None:
