@@ -7,7 +7,11 @@
 
 I created the docker containers for frontend and backend. 
 
+For the frontend
+
 ![Image of Docker file for frontend](assets/Frontend%20Docker%20FIle.png)
+
+For the backend
 
 ![Images of Dockerfile for Backend](assets/Backend%20Docker%20File.png)
 
