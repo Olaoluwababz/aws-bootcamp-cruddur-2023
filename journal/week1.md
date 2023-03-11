@@ -30,4 +30,4 @@ I added command to the docker compose file for the dynamo db and posetgresql
 
 I added command to the docker compose file for the dynamo db and posetgresql
 
-![Images of Added Commands to docker compose file for DynamoDB and postgresql](assets/Dynamo%20db%20and%20Postgreql.png)
+![Docker Images pushed to docker hub](assets/DockerImages.png)
