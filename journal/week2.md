@@ -4,31 +4,31 @@
 
 ### Required Homework Task
 
-## Creating Container For Frontend and Backend applications
+## Cloud Watch
 
-I created the docker containers for frontend and backend. 
+I Created a cloud watch log group and Loggerd to the cloud API end point
 
-![Image of Docker file for frontend](assets/Frontend%20Docker%20FIle.png)
-
-![Images of Dockerfile for Backend](assets/Backend%20Docker%20File.png)
-
-
-## Created Docker compose file for running multiple containers
-
-I created a docker compose file to spin of frontend and backend application builds.
-
-![Images of Docker Compose file](assets/Docker%20Compose%20File%20ofor%20front%20end%20and%20backend.png)
-
-## Added DynamoDb local and progress
-
-I added command to the docker compose file for the dynamo db and posetgresql
-
-![Images of Added Commands to docker compose file for DynamoDB and postgresql](assets/Dynamo%20db%20and%20Postgreql.png)
+![Image of Docker file for frontend](assets/Cloudlogs.png)
 
 
 
-## I pushed my container images to Docker Hub public repository
+## RollBar.
 
-I added command to the docker compose file for the dynamo db and posetgresql
+I Created a Rollbar, added an endpoint and tested to see functionality in Rollbar.
 
-![Docker Images pushed to docker hub](assets/DockerImage.png)
+![Images of Docker Compose file](assets/Rollbar.png)
+
+## HoneyComb
+
+I installed the honeycomb telementry dependencies, added the endpoint and tested to see logs in Honeycomb
+
+![Images of Added Commands to docker compose file for DynamoDB and postgresql](assets/Honeycomb.png)
+
+
+
+## AWS Xray Traces
+
+I added Xrat Traces and added a segment and subsegment to the user activities to trace and saw the result of the traces in X-ray Traces.
+I would have to go back through most of these done as it is not really easy to comprehend.
+
+![Docker Images pushed to docker hub](assets/Traces.png)
