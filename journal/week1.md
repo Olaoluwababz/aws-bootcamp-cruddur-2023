@@ -7,24 +7,27 @@
 
 I created the docker containers for frontend and backend. 
 
-![image of the billing alarm i created](assets/Billingalarm%20screenshpt.png)
+![Image of Docker file for frontend](assets/Frontend%20Docker%20FIle.png)
+
+![Images of Dockerfile for Backend](assets/Backend%20Docker%20File.png)
 
 
 ## Created Docker compose file for running multiple containers
 
-I created multiple budgets to track my spending for both credits and monthly spending.
+I created a docker compose file to spin of frontend and backend application builds.
 
-![Images of budgets created](assets/Budgets%20screenshot.png)
+![Images of Docker Compose file](assets/Docker%20Compose%20File%20ofor%20front%20end%20and%20backend.png)
 
 ## Added DynamoDb local and progress
 
-This is the link to the architectural design on lucid chart.
+I added command to the docker compose file for the dynamo db and posetgresql
 
-[Click to view chart](https://lucid.app/lucidchart/6b0f5ad9-1b60-4a68-a346-c7eb0c485d87/edit?invitationId=inv_5fe44d23-414e-4059-806e-500b81fe02a5)
+![Images of Added Commands to docker compose file for DynamoDB and postgresql](assets/Dynamo%20db%20and%20Postgreql.png)
+
 
 
 ## I pushed my container images to Docker Hub public repository
 
-I created multiple budgets to track my spending for both credits and monthly spending.
+I added command to the docker compose file for the dynamo db and posetgresql
 
-![Images of budgets created](assets/Budgets%20screenshot.png)
+![Images of Added Commands to docker compose file for DynamoDB and postgresql](assets/Dynamo%20db%20and%20Postgreql.png)
