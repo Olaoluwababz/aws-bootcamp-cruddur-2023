@@ -22,7 +22,7 @@ export default function ConfirmationPage() {
   }
 
   const resend_code = async (event) => {
-    setError('')
+    setErrors('')
     try {
       await Auth.resendSignUp(email);
       console.log('code resent successfully');
@@ -39,8 +39,6 @@ export default function ConfirmationPage() {
       }
     }
   }
-
-
 
   const onsubmit = async (event) => {
     event.preventDefault();

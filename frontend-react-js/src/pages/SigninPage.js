@@ -4,8 +4,6 @@ import {ReactComponent as Logo} from '../components/svg/logo.svg';
 import { Link } from "react-router-dom";
 
 // [TODO] Authenication
-// import Cookies from 'js-cookie'
-
 import { Auth } from 'aws-amplify';
 
 export default function SigninPage() {
@@ -18,20 +16,20 @@ export default function SigninPage() {
     setErrors('')
     event.preventDefault();
     Auth.signIn(email, password)
-      .then(user => {
-        localStorage.setItem("access_token", user.signInUserSession.accessToken.jwtToken)
-        window.location.href = "/"
-      })
-      .catch(error => { 
-        if (error.code == 'UserNotConfirmedException') {
+    .then(user => {
+      console.log('user',user)
+      localStorage.setItem("access_token", user.signInUserSession.accessToken.jwtToken)
+      window.location.href = "/"
+    })
+    .catch(error => { 
+      if (error.code == 'UserNotConfirmedException') {
         window.location.href = "/confirm"
-        }
-        setErrors(error.message)
-        });
+      }
+      setErrors(error.message)
+    });
     return false
   }
 
-  
   const email_onchange = (event) => {
     setEmail(event.target.value);
   }
